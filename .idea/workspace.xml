@@ -5,23 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34a82ebf-950d-41df-a56c-0da9bcfe9f60" name="Changes" comment="first push implement all classes and interface set up Ui Form , error handling methods and write to file method">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Payroll.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BasePlusCommissionEmployee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CommissionEmployee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HourlyEmployee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InvalidDataException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Invoice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Payable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Payroll.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Payroll.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SalariedEmployee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/paystub.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +50,7 @@
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "268",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>
   <component name="RunManager" selected="Application.Payroll">
@@ -98,6 +84,15 @@
       <option name="presentableId" value="Default" />
       <updated>1740871155456</updated>
     </task>
+    <task id="LOCAL-00001" summary="first push implement all classes and interface set up Ui Form , error handling methods and write to file method">
+      <option name="closed" value="true" />
+      <created>1742111137336</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742111137336</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

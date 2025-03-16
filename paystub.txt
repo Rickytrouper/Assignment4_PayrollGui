@@ -1,0 +1,142 @@
+=========================
+        INVOICE
+=========================
+Contractor: ricardo wright
+Part Number: 1234545
+Description: car parts
+Quantity: 1
+Price Per Item: $2000.0
+Total Amount: $2000.0
+Date of Payment: 2025-03-15
+-------------------------
+Employee: Ricardo Wright
+SSN: 117217837
+Payment Amount: $1.0E7
+Date of Payment: 2025-03-15
+------------------------------
+Employee: Ricardo Wright
+SSN: 1234556789
+Payment Amount: $3000.0
+Date of Payment: 2025-03-15
+------------------------------
+=========================
+          PAY STUB
+=========================
+Employee: ricardo wright, SSN: 123456789, Payment Amount: $45000.00
+=========================
+          PAY STUB
+=========================
+Employee: ricardo Wright
+SSN: 12345678
+Payment Amount: $16000.00
+Date of Payment: 2025-03-15
+=========================
+          PAY STUB
+=========================
+Employee: Ricardo Wright
+SSN: 12345678
+Payment Amount: $11500.00
+Date of Payment: 2025-03-15
+=========================
+          PAY STUB
+=========================
+Employee: Ricardo Wright
+SSN: 12345678
+Payment Amount: $11500.00
+Date of Payment: 2025-03-15
+=========================
+          PAY STUB
+=========================
+Employee: Andrene Wright
+SSN: 123456789
+Payment Amount: $20.00
+Date of Payment: 2025-03-15
+=========================
+          PAY STUB
+=========================
+Employee: sashenee wright
+SSN: 123123123
+Payment Amount: $30.00
+Date of Payment: 2025-03-15
+=========================
+          PAY STUB
+=========================
+Employee: ricardo wright
+SSN: 2456788766
+Payment Amount: $8.00
+Date of Payment: 2025-03-16
+=========================
+          PAY STUB
+=========================
+Employee: Ricardo Wright
+SSN: 12345678
+Payment Amount: $6000.00
+Date of Payment: 2025-03-16
+=========================
+          PAY STUB
+=========================
+Employee: Ricardo wright
+SSN: 12344
+Payment Amount: $5060.00
+Date of Payment: 2025-03-16
+=========================
+          PAY STUB
+=========================
+Employee: Ricardo wright
+SSN: 12344
+Payment Amount: $5060.00
+Date of Payment: 2025-03-16
+=========================
+        INVOICE
+=========================
+Contractor: paul smith
+Part Number: pn1232
+Description: car parts
+Quantity: 3
+Price Per Item: $2000.0
+Total Amount: $6000.0
+Date of Payment: 2025-03-16
+-------------------------
+=========================
+        INVOICE
+=========================
+Contractor: paul smith
+Part Number: pn1232
+Description: car parts
+Quantity: 3
+Price Per Item: $2000.0
+Total Amount: $6000.0
+Date of Payment: 2025-03-16
+-------------------------
+=========================
+        INVOICE
+=========================
+Contractor: paul willaims
+Part Number: pn#2344
+Description: cat
+Quantity: 4
+Price Per Item: $10000.0
+Total Amount: $40000.0
+Date of Payment: 2025-03-16
+-------------------------
+=========================
+          PAY STUB
+=========================
+Employee: ricardo Wright
+SSN: 098765434
+Payment Amount: $120000.00
+Date of Payment: 2025-03-16
+=========================
+          PAY STUB
+=========================
+Employee: ricardo wright
+SSN: 34434544444
+Payment Amount: $10000.00
+Date of Payment: 2025-03-16
+=========================
+          PAY STUB
+=========================
+Employee: ricardo wright
+SSN: 2345675545
+Payment Amount: $2000.00
+Date of Payment: 2025-03-16
