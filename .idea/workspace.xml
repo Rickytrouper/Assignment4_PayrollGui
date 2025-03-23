@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34a82ebf-950d-41df-a56c-0da9bcfe9f60" name="Changes" comment="first push implement all classes and interface set up Ui Form , error handling methods and write to file method">
+    <list default="true" id="34a82ebf-950d-41df-a56c-0da9bcfe9f60" name="Changes" comment="update layout, implement validation and exception">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paystub.txt" beforeDir="false" afterPath="$PROJECT_DIR$/paystub.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Payroll.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Payroll.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Payroll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Payroll.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,20 +51,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Payroll.executor": "Run",
-    "Application.PayrollTest.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "123",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "334",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Payroll.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PayrollTest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;123&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;334&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.Payroll">
     <configuration name="Payroll" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Payroll" />
@@ -114,11 +112,20 @@
       <option name="project" value="LOCAL" />
       <updated>1742111746858</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update layout, implement validation and exception">
+      <option name="closed" value="true" />
+      <created>1742765878560</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1742765878561</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first push implement all classes and interface set up Ui Form , error handling methods and write to file method" />
-    <option name="LAST_COMMIT_MESSAGE" value="first push implement all classes and interface set up Ui Form , error handling methods and write to file method" />
+    <MESSAGE value="update layout, implement validation and exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="update layout, implement validation and exception" />
   </component>
 </project>

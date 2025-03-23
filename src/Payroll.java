@@ -25,6 +25,22 @@ public class Payroll {
     private DefaultTableModel tableModel, invoiceTableModel;
     private ArrayList<Payable> employees;
 
+    // Utility method to create JTextField
+    private JTextField createTextField() {
+        JTextField textField = new JTextField();
+        textField.setPreferredSize(new Dimension(200, 25));
+        textField.setFont(new Font("Arial", Font.PLAIN, 14));
+        return textField;
+    }
+
+    // Utility method to create JButton
+    private JButton createButton(String text) {
+        JButton button = new JButton(text);
+        button.setPreferredSize(new Dimension(200, 25));
+        button.setFont(new Font("Arial", Font.PLAIN, 14));
+        return button;
+    }
+
     public Payroll() {
         employees = new ArrayList<>();
 
@@ -53,7 +69,7 @@ public class Payroll {
         empTypeModel.addElement("Commission");
         empTypeModel.addElement("Hourly");
         empTypeModel.addElement("Salaried");
-        empTypeModel.addElement("Base Plus Commission");
+        empTypeModel.addElement("BasePlusCommission");
 
         // Initialize the JList with the DefaultListModel
         listEmpType = new JList<>(empTypeModel);
@@ -132,7 +148,7 @@ public class Payroll {
         // Initialize frame
         JFrame frame = new JFrame("Payroll Management");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800, 1200);
+        frame.setSize(700, 900);
         frame.add(mainPanel);
         frame.setVisible(true);
 
@@ -183,13 +199,15 @@ public class Payroll {
         }
         if (ssn.isEmpty()) {
             errorMessage.append("SSN is required.\n");
+        } else if (ssn.length() != 9 || !ssn.matches("\\d{9}")) {
+            errorMessage.append("SSN must be 9 digits.\n");
         }
         if (empType.isEmpty()) {
             errorMessage.append("Employment Type is required.\n");
         }
 
         // Show validation errors if any
-        if (errorMessage.length() > 0) {
+        if (!errorMessage.isEmpty()) {
             JOptionPane.showMessageDialog(mainPanel, errorMessage.toString(), "Input Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
