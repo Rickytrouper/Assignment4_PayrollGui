@@ -48,9 +48,10 @@ public class Invoice implements Payable {
 
     @Override
     public void writeToFile(BufferedWriter writer) throws IOException {
-        writer.write("Contractor Name: %s, Part Number: %s, Description: %s, Quantity: %d, " +
-                        "Price Per Item: %.2f, Payment Amount: %.2f, Date of Payment: %s%n"
-        );
+        writer.write(String.format("Contractor Name: %s, Part Number: %s, Description: %s, Quantity: %d, " +
+                        "Price Per Item: %.2f, Payment Amount: %.2f%n",
+                contractorName, partNumber, partDescription, quantity,
+                pricePerItem, getPaymentAmount()));
     }
 }
 

@@ -10,14 +10,18 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-@SuppressWarnings("ALL")
 public class Payroll {
     private JPanel mainPanel;
-    private JTextField JtFstName, JtLstName, JtSSN, JtGrossSales, JtCommissionRate, JtWage, JtHours, JtWeeklySalary, JtEmpType;
+    private JTextField JtFstName, JtLstName, JtSSN, JtGrossSales, JtCommissionRate, JtWage, JtHours, JtWeeklySalary, JtBaseSalary;
     private JTextField JtPartNumber, JtPartDescription, JtQuantity, JtPricePerItem, JtContractorName;
     private JTable JtblEmpRecords, JtblInvoiceRecords;
     private JButton JbAddEmp, JbRemoveEmp, JbAddInvoice, JbGeneratePayStub;
-    private JTextField JtBaseSalary;
+    private JPanel JptableView;
+    private JScrollPane JscropEmpRecords;
+    private JScrollPane JscroInvoiceRecords;
+    private JLabel JlAppName;
+    private JList<String> listEmpType; // Changed to JList<String>
+    private DefaultListModel<String> empTypeModel; // Model to manage the employment types
     private DefaultTableModel tableModel, invoiceTableModel;
     private ArrayList<Payable> employees;
 
@@ -26,7 +30,7 @@ public class Payroll {
 
         // Initialize the main panel
         mainPanel = new JPanel();
-        mainPanel.setLayout(new GridLayout(25, 2)); // Adjusted row count to match form
+        mainPanel.setLayout(new GridLayout(0, 2, 1, 1)); // 0 rows (dynamic), 2 columns, horizontal and vertical gaps
 
         // Initialize text fields
         JtFstName = new JTextField();
@@ -38,25 +42,41 @@ public class Payroll {
         JtHours = new JTextField();
         JtWeeklySalary = new JTextField();
         JtBaseSalary = new JTextField();
-        JtEmpType = new JTextField();
         JtPartNumber = new JTextField();
         JtPartDescription = new JTextField();
         JtQuantity = new JTextField();
         JtPricePerItem = new JTextField();
         JtContractorName = new JTextField();
 
-        // Initialize labels
+        // Initialize the DefaultListModel for employment types
+        empTypeModel = new DefaultListModel<>();
+        empTypeModel.addElement("Commission");
+        empTypeModel.addElement("Hourly");
+        empTypeModel.addElement("Salaried");
+        empTypeModel.addElement("Base Plus Commission");
+
+        // Initialize the JList with the DefaultListModel
+        listEmpType = new JList<>(empTypeModel);
+        listEmpType.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        listEmpType.setSelectedIndex(0); // Default selection (optional)
+        listEmpType.setVisibleRowCount(1); // Show 4 rows at a time
+        JScrollPane empTypeScrollPane = new JScrollPane(listEmpType); // Make the JList scrollable
+        empTypeScrollPane.setPreferredSize(new Dimension(150, 60)); // Set preferred size for the scroll pane
+
+        // Add components to the panel
         mainPanel.add(new JLabel("First Name:"));
         mainPanel.add(JtFstName);
         mainPanel.add(new JLabel("Last Name:"));
         mainPanel.add(JtLstName);
         mainPanel.add(new JLabel("SSN #:"));
         mainPanel.add(JtSSN);
+        mainPanel.add(new JLabel("Employment Type:")); // Label for employment type
+        mainPanel.add(empTypeScrollPane); // Add the scroll pane with the JList
         mainPanel.add(new JLabel("Gross Sales:"));
         mainPanel.add(JtGrossSales);
         mainPanel.add(new JLabel("Commission Rate:"));
         mainPanel.add(JtCommissionRate);
-        mainPanel.add(new JLabel("Base Salary"));
+        mainPanel.add(new JLabel("Base Salary:"));
         mainPanel.add(JtBaseSalary);
         mainPanel.add(new JLabel("Hourly Wage:"));
         mainPanel.add(JtWage);
@@ -64,8 +84,6 @@ public class Payroll {
         mainPanel.add(JtHours);
         mainPanel.add(new JLabel("Weekly Salary:"));
         mainPanel.add(JtWeeklySalary);
-        mainPanel.add(new JLabel("Employment Type:"));
-        mainPanel.add(JtEmpType);
         mainPanel.add(new JLabel("Contractor Name:"));
         mainPanel.add(JtContractorName);
         mainPanel.add(new JLabel("Part Number:"));
@@ -85,23 +103,23 @@ public class Payroll {
 
         // Initialize table for employee records
         String[] employeeColumnNames = {"Name", "SSN", "Payment"};
-        tableModel = new DefaultTableModel(employeeColumnNames, 0);
+        tableModel = new DefaultTableModel(employeeColumnNames, 0); // No rows initially
         JtblEmpRecords = new JTable(tableModel);
         JtblEmpRecords.setFillsViewportHeight(true); // Ensure the table fills the viewport
 
+// Scroll pane for employee table
+        JScrollPane employeeScrollPane = new JScrollPane(JtblEmpRecords);
+        employeeScrollPane.setPreferredSize(new Dimension(60, 30)); // Set preferred size for the scroll pane
+
 // Initialize table for invoice records
         String[] invoiceColumnNames = {"Contractor Name", "Part Number", "Description", "Quantity", "Price", "Total"};
-        invoiceTableModel = new DefaultTableModel(invoiceColumnNames, 0);
+        invoiceTableModel = new DefaultTableModel(invoiceColumnNames, 0); // No rows initially
         JtblInvoiceRecords = new JTable(invoiceTableModel);
         JtblInvoiceRecords.setFillsViewportHeight(true); // Ensure the table fills the viewport
 
-// Create JScrollPane for employee table with preferred size
-        JScrollPane employeeScrollPane = new JScrollPane(JtblEmpRecords);
-        employeeScrollPane.setPreferredSize(new Dimension(700, 200)); // Set preferred size (width, height)
-
-// Create JScrollPane for invoice table with preferred size
+        // Scroll pane for invoice table
         JScrollPane invoiceScrollPane = new JScrollPane(JtblInvoiceRecords);
-        invoiceScrollPane.setPreferredSize(new Dimension(700, 200)); // Set preferred size (width, height)
+        invoiceScrollPane.setPreferredSize(new Dimension(60,30 )); // Set preferred size for the scroll pane
 
 // Add components to the panel
         mainPanel.add(JbAddEmp);
@@ -114,7 +132,7 @@ public class Payroll {
         // Initialize frame
         JFrame frame = new JFrame("Payroll Management");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800, 600);
+        frame.setSize(800, 1200);
         frame.add(mainPanel);
         frame.setVisible(true);
 
@@ -152,7 +170,7 @@ public class Payroll {
         String firstName = JtFstName.getText().trim();
         String lastName = JtLstName.getText().trim();
         String ssn = JtSSN.getText().trim();
-        String empType = JtEmpType.getText().trim();
+        String empType = listEmpType.getSelectedValue();
         double payment = 0;
 
         // Validate inputs
@@ -350,7 +368,7 @@ public class Payroll {
         JtWage.setText("");
         JtHours.setText("");
         JtWeeklySalary.setText("");
-        JtEmpType.setText("");
+        listEmpType.clearSelection(); // Clear selection in JList
         JtBaseSalary.setText(""); // Clear Base Salary field
     }
 

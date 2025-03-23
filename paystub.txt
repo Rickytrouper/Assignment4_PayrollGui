@@ -140,3 +140,31 @@ Employee: ricardo wright
 SSN: 2345675545
 Payment Amount: $2000.00
 Date of Payment: 2025-03-16
+=========================
+          PAY STUB
+=========================
+Employee: Ricardo Wright
+SSN: 123456789
+Payment Amount: $2000.00
+Date of Payment: 2025-03-22
+=========================
+          PAY STUB
+=========================
+Employee: Riacrdo wrighgt
+SSN: 123456789
+Payment Amount: $4000.00
+Date of Payment: 2025-03-22
+=========================
+          PAY STUB
+=========================
+Employee: ricardo Wright
+SSN: 123456789
+Payment Amount: $9000.00
+Date of Payment: 2025-03-22
+=========================
+          PAY STUB
+=========================
+Employee: andrene smith
+SSN: 2344566789
+Payment Amount: $8000.00
+Date of Payment: 2025-03-22
