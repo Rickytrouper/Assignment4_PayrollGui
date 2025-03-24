@@ -2,8 +2,8 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 
 public class CommissionEmployee extends Employee {
-    private double grossSales;
-    private double commissionRate;
+    private final double grossSales;
+    private final double commissionRate;
 
     public CommissionEmployee(String firstName, String lastName, String socialSecurityNumber, double grossSales, double commissionRate)
             throws InvalidDataException {

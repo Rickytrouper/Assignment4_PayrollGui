@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class BasePlusCommissionEmployee extends CommissionEmployee {
-    private double baseSalary;
+    private final double baseSalary;
 
     public BasePlusCommissionEmployee(String firstName, String lastName, String socialSecurityNumber,
                                       double grossSales, double commissionRate, double baseSalary)

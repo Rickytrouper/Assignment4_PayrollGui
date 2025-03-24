@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class SalariedEmployee extends Employee {
-    private double weeklySalary;
+    private final double weeklySalary;
 
     public SalariedEmployee(String firstName, String lastName, String socialSecurityNumber, double weeklySalary)
             throws InvalidDataException {

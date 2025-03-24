@@ -4,8 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class HourlyEmployee extends Employee {
-    private double wage;
-    private double hours;
+    private final double wage;
+    private final double hours;
 
     public HourlyEmployee(String firstName, String lastName, String socialSecurityNumber, double wage, double hours)
             throws InvalidDataException {

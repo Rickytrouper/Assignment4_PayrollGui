@@ -2,20 +2,24 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.time.LocalDate;
 
+// implement Abstract employee class
 public abstract class Employee implements Payable {
-    private String firstName;
-    private String lastName;
-    private String socialSecurityNumber;
+    private final String firstName;
+    private final String lastName;
+    private final String socialSecurityNumber;
 
     public Employee(String firstName, String lastName, String socialSecurityNumber) throws InvalidDataException {
         if (firstName == null || lastName == null || socialSecurityNumber == null) {
             throw new InvalidDataException("Employee data cannot be null.");
         }
+
+        // initializing setters
         this.firstName = firstName;
         this.lastName = lastName;
         this.socialSecurityNumber = socialSecurityNumber;
     }
 
+        // initializing getters
     public String getFirstName() {
         return firstName;
     }
@@ -28,9 +32,11 @@ public abstract class Employee implements Payable {
         return socialSecurityNumber;
     }
 
+    // overwriting payable
     @Override
     public abstract double getPaymentAmount();
 
+      // overwriting write to file
     @Override
     public void writeToFile(BufferedWriter writer) throws IOException {
         writer.write(String.format("Employee Name: %s %s, SSN: %s, Payment Amount: %.2f, Date of Payment: %s%n",
@@ -38,9 +44,3 @@ public abstract class Employee implements Payable {
     }
 }
 
-   /* public Object getEmployeeType() {
-        return null;
-    }
-
-    public abstract void writeToFile(BufferedWriter writer) throws IOException;
-}*/

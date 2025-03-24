@@ -3,11 +3,11 @@ import java.io.IOException;
 
 
 public class Invoice implements Payable {
-    private String partNumber;
-    private String partDescription;
-    private int quantity;
-    private double pricePerItem;
-    private String contractorName;
+    private final String partNumber;
+    private final String partDescription;
+    private final int quantity;
+    private final double pricePerItem;
+    private final String contractorName;
 
     public Invoice(String contractorName, String partNumber, String partDescription, int quantity, double pricePerItem)
             throws InvalidDataException {

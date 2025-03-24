@@ -21,9 +21,10 @@ public class Payroll {
     private JScrollPane JscroInvoiceRecords;
     private JLabel JlAppName;
     private JList<String> listEmpType; // Changed to JList<String>
-    private DefaultListModel<String> empTypeModel; // Model to manage the employment types
-    private DefaultTableModel tableModel, invoiceTableModel;
-    private ArrayList<Payable> employees;
+    private final DefaultListModel<String> empTypeModel; // Model list used to manage the employment types
+    private final DefaultTableModel tableModel;
+    private final DefaultTableModel invoiceTableModel; // Model table used to manage save data
+    private final ArrayList<Payable> employees;
 
     // Utility method to create JTextField
     private JTextField createTextField() {
@@ -182,6 +183,7 @@ public class Payroll {
         });
     }
 
+        // implementing instances of each employee subclass and that of a contractor
     private void addEmployee() {
         String firstName = JtFstName.getText().trim();
         String lastName = JtLstName.getText().trim();
@@ -211,7 +213,7 @@ public class Payroll {
             JOptionPane.showMessageDialog(mainPanel, errorMessage.toString(), "Input Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-
+                        // implement validation to capture user input
         try {
             if (empType.equalsIgnoreCase("Commission")) {
                 double grossSales = Double.parseDouble(JtGrossSales.getText());
@@ -297,11 +299,12 @@ public class Payroll {
         int selectedInvoiceRow = JtblInvoiceRecords.getSelectedRow(); // Get the selected invoice row
 
         if (selectedEmployeeRow != -1) {
+
             // Generate Pay Stub
             Payable item = employees.get(selectedEmployeeRow); // Get the selected Payable item
 
-            if (item instanceof Employee) { // Check if item is an Employee
-                Employee employee = (Employee) item; // Cast to Employee
+            if (item instanceof Employee employee) { // Check if item is an Employee
+                // Cast to Employee
 
                 // Retrieve employee information
                 String firstName = employee.getFirstName();
@@ -377,6 +380,7 @@ public class Payroll {
         }
     }
 
+        // method to clear input fields for employees after submission
     private void clearInputFields() {
         JtFstName.setText("");
         JtLstName.setText("");
@@ -390,6 +394,7 @@ public class Payroll {
         JtBaseSalary.setText(""); // Clear Base Salary field
     }
 
+    // method to clear input fields for contractor after submission
     private void clearInvoiceFields() {
         JtPartNumber.setText("");
         JtPartDescription.setText("");
