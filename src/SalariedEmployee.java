@@ -25,7 +25,7 @@ public class SalariedEmployee extends Employee {
         double paymentAmount = getPaymentAmount();
         String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 
-        writer.write("Employee: " + getFirstName() + " " + getLastName());
+        writer.write("Salaried Employee: " + getFirstName() + " " + getLastName());
         writer.newLine();
         writer.write("SSN: " + getSocialSecurityNumber());
         writer.newLine();

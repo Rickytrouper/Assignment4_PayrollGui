@@ -26,15 +26,13 @@ public class BasePlusCommissionEmployee extends CommissionEmployee {
         double paymentAmount = getPaymentAmount();
         String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 
-        writer.write("Employee: " + getFirstName() + " " + getLastName());
+        writer.write("Base Plus Commission Employee: " + getFirstName() + " " + getLastName());
         writer.newLine();
         writer.write("SSN: " + getSocialSecurityNumber());
         writer.newLine();
         writer.write("Payment Amount: $" + paymentAmount);
         writer.newLine();
         writer.write("Date of Payment: " + date);
-        writer.newLine();
-        writer.write("Base Salary: $" + baseSalary);
         writer.newLine();
         writer.write("------------------------------");
         writer.newLine();

@@ -289,6 +289,9 @@ public class Payroll {
             double totalAmount = quantity * pricePerItem;
             invoiceTableModel.addRow(new Object[]{contractorName, partNumber, partDescription, quantity, pricePerItem, totalAmount});
             clearInvoiceFields();
+
+            // Show confirmation message after successful addition of the invoice
+            JOptionPane.showMessageDialog(mainPanel, "Invoice added successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(mainPanel, "Invalid number format.", "Input Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -298,28 +301,13 @@ public class Payroll {
         int selectedEmployeeRow = JtblEmpRecords.getSelectedRow(); // Get the selected employee row
         int selectedInvoiceRow = JtblInvoiceRecords.getSelectedRow(); // Get the selected invoice row
 
+        // Handle generation of pay stub
         if (selectedEmployeeRow != -1) {
-
-            // Generate Pay Stub
-            Payable item = employees.get(selectedEmployeeRow); // Get the selected Payable item
+            Payable item = employees.get(selectedEmployeeRow); // Get the selected payable item
 
             if (item instanceof Employee employee) { // Check if item is an Employee
-                // Cast to Employee
-
-                // Retrieve employee information
-                String firstName = employee.getFirstName();
-                String lastName = employee.getLastName();
-                String ssn = employee.getSocialSecurityNumber();
-                double paymentAmount = employee.getPaymentAmount();
-                String dateOfPayment = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-
-                // Create the pay stub string
-                String payStub = String.format("Employee: %s %s\nSSN: %s\nPayment Amount: $%.2f\nDate of Payment: %s",
-                        firstName, lastName, ssn, paymentAmount, dateOfPayment);
-
-                // Write pay stub to file
                 try (BufferedWriter writer = new BufferedWriter(new FileWriter("paystub.txt", true))) {
-                    // Write header for pay stub
+                    // Header for writing the employee pay stub
                     writer.write("=========================");
                     writer.newLine();
                     writer.write("          PAY STUB");
@@ -327,59 +315,50 @@ public class Payroll {
                     writer.write("=========================");
                     writer.newLine();
 
-                    // Write employee details
-                    writer.write(payStub);
-                    writer.newLine(); // Add a new line after the pay stub details
-
-                    JOptionPane.showMessageDialog(null, payStub, "Pay Stub", JOptionPane.INFORMATION_MESSAGE);
+                    // Call the write method from the Employee class
+                    employee.writeToFile(writer);
+                    JOptionPane.showMessageDialog(null, "Pay stub generated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
                 } catch (IOException e) {
                     JOptionPane.showMessageDialog(null, "Error writing to file: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Selected item is not an employee.", "Error", JOptionPane.ERROR_MESSAGE);
             }
-        } else if (selectedInvoiceRow != -1) {
-            // Generate Invoice
+        }
+
+        // Handle generation of invoice
+        if (selectedInvoiceRow != -1) {
+            // Retrieve the invoice from the table model (ensure you get the right data)
             String contractorName = (String) invoiceTableModel.getValueAt(selectedInvoiceRow, 0);
             String partNumber = (String) invoiceTableModel.getValueAt(selectedInvoiceRow, 1);
             String partDescription = (String) invoiceTableModel.getValueAt(selectedInvoiceRow, 2);
             int quantity = (Integer) invoiceTableModel.getValueAt(selectedInvoiceRow, 3);
             double pricePerItem = (Double) invoiceTableModel.getValueAt(selectedInvoiceRow, 4);
-            double totalAmount = (Double) invoiceTableModel.getValueAt(selectedInvoiceRow, 5);
-            String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+
+            Payable invoice = new Invoice(contractorName, partNumber, partDescription, quantity, pricePerItem); // Create a new Invoice object
 
             try (BufferedWriter writer = new BufferedWriter(new FileWriter("paystub.txt", true))) {
+                // Header for writing the invoice
                 writer.write("=========================");
                 writer.newLine();
-                writer.write("        INVOICE");
+                writer.write("          INVOICE");
                 writer.newLine();
                 writer.write("=========================");
                 writer.newLine();
-                writer.write("Contractor: " + contractorName);
-                writer.newLine();
-                writer.write("Part Number: " + partNumber);
-                writer.newLine();
-                writer.write("Description: " + partDescription);
-                writer.newLine();
-                writer.write("Quantity: " + quantity);
-                writer.newLine();
-                writer.write("Price Per Item: $" + pricePerItem);
-                writer.newLine();
-                writer.write("Total Amount: $" + totalAmount);
-                writer.newLine();
-                writer.write("Date of Payment: " + date);
-                writer.newLine();
-                writer.write("-------------------------");
-                writer.newLine();
+
+                // Call the write method from the Invoice class
+                invoice.writeToFile(writer);
                 JOptionPane.showMessageDialog(mainPanel, "Invoice generated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(mainPanel, "Error writing to file: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
-        } else {
+        }
+
+        // If neither row is selected
+        if (selectedEmployeeRow == -1 && selectedInvoiceRow == -1) {
             JOptionPane.showMessageDialog(mainPanel, "Please select an employee or an invoice to generate.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-
         // method to clear input fields for employees after submission
     private void clearInputFields() {
         JtFstName.setText("");

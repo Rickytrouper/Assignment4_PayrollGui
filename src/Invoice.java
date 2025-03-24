@@ -1,19 +1,16 @@
 import java.io.BufferedWriter;
 import java.io.IOException;
-
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Invoice implements Payable {
+    private final String contractorName;
     private final String partNumber;
     private final String partDescription;
     private final int quantity;
     private final double pricePerItem;
-    private final String contractorName;
 
-    public Invoice(String contractorName, String partNumber, String partDescription, int quantity, double pricePerItem)
-            throws InvalidDataException {
-        if (quantity < 0 || pricePerItem < 0) {
-            throw new InvalidDataException("Quantity and price per item cannot be negative.");
-        }
+    public Invoice(String contractorName, String partNumber, String partDescription, int quantity, double pricePerItem) {
         this.contractorName = contractorName;
         this.partNumber = partNumber;
         this.partDescription = partDescription;
@@ -23,35 +20,26 @@ public class Invoice implements Payable {
 
     @Override
     public double getPaymentAmount() {
-        return quantity * pricePerItem;
-    }
-
-    public String getPartNumber() {
-        return partNumber;
-    }
-
-    public String getPartDescription() {
-        return partDescription;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public double getPricePerItem() {
-        return pricePerItem;
-    }
-
-    public String getContractorName() {
-        return contractorName;
+        return quantity * pricePerItem; // Total amount due for the invoice
     }
 
     @Override
     public void writeToFile(BufferedWriter writer) throws IOException {
-        writer.write(String.format("Contractor Name: %s, Part Number: %s, Description: %s, Quantity: %d, " +
-                        "Price Per Item: %.2f, Payment Amount: %.2f%n",
-                contractorName, partNumber, partDescription, quantity,
-                pricePerItem, getPaymentAmount()));
+        writer.write("Contractor: " + contractorName);
+        writer.newLine();
+        writer.write("Part Number: " + partNumber);
+        writer.newLine();
+        writer.write("Description: " + partDescription);
+        writer.newLine();
+        writer.write("Quantity: " + quantity);
+        writer.newLine();
+        writer.write("Price Per Item: $" + pricePerItem);
+        writer.newLine();
+        writer.write("Total Amount: $" + getPaymentAmount());
+        writer.newLine();
+        writer.write("Date of Payment: " + new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
+        writer.newLine();
+        writer.write("-------------------------");
+        writer.newLine();
     }
 }
-

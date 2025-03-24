@@ -6,12 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="34a82ebf-950d-41df-a56c-0da9bcfe9f60" name="Changes" comment="update SSN validation included check for # of digits , update the employee type selection add utility methods for Jtextfileds and Jbottons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paystub.txt" beforeDir="false" afterPath="$PROJECT_DIR$/paystub.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BasePlusCommissionEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BasePlusCommissionEmployee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CommissionEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommissionEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HourlyEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HourlyEmployee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Payable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Payable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Payroll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Payroll.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SalariedEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SalariedEmployee.java" afterDir="false" />
     </list>
