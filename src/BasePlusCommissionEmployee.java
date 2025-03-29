@@ -1,3 +1,8 @@
+//Abbligale Ried - ID#2301010638
+//Kwame Harriott - ID#2301011566
+//Shamoy Shea -  ID#2201011505
+//Ricardo Wright - ID#2201010833
+
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -6,6 +11,7 @@ import java.util.Date;
 public class BasePlusCommissionEmployee extends CommissionEmployee {
     private final double baseSalary;
 
+    // initialized Constructor
     public BasePlusCommissionEmployee(String firstName, String lastName, String socialSecurityNumber,
                                       double grossSales, double commissionRate, double baseSalary)
             throws InvalidDataException {
@@ -15,12 +21,13 @@ public class BasePlusCommissionEmployee extends CommissionEmployee {
         }
         this.baseSalary = baseSalary;
     }
-
+    // overwrite get Payment method
     @Override
     public double getPaymentAmount() {
         return baseSalary + super.getPaymentAmount();
     }
 
+    // overwrite the write to file method
     @Override
     public void writeToFile(BufferedWriter writer) throws IOException {
         double paymentAmount = getPaymentAmount();

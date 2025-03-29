@@ -41,3 +41,38 @@ Price Per Item: $3500.0
 Total Amount: $14000.0
 Date of Payment: 2025-03-24
 -------------------------
+=========================
+          PAY STUB
+=========================
+ Commissioned Employee: Richard Smith
+SSN: 123456787
+Payment Amount: $3000.0
+Date of Payment: 2025-03-25
+------------------------------
+=========================
+          PAY STUB
+=========================
+ Commissioned Employee: Richard Smith
+SSN: 123456787
+Payment Amount: $3000.0
+Date of Payment: 2025-03-25
+------------------------------
+=========================
+          INVOICE
+=========================
+Contractor: paul smith
+Part Number: LB-8767
+Description: auto parts
+Quantity: 10
+Price Per Item: $300.0
+Total Amount: $3000.0
+Date of Payment: 2025-03-25
+-------------------------
+=========================
+          PAY STUB
+=========================
+ Commissioned Employee: Ricardo Wright
+SSN: 254676547
+Payment Amount: $2000.0
+Date of Payment: 2025-03-25
+------------------------------

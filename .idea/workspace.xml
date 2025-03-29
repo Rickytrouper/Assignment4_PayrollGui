@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34a82ebf-950d-41df-a56c-0da9bcfe9f60" name="Changes" comment="update SSN validation included check for # of digits , update the employee type selection add utility methods for Jtextfileds and Jbottons">
+    <list default="true" id="34a82ebf-950d-41df-a56c-0da9bcfe9f60" name="Changes" comment="update generarte paystub method format teh write to file in each class add comments also added employee typoe to the printed paystub">
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paystub.txt" beforeDir="false" afterPath="$PROJECT_DIR$/paystub.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BasePlusCommissionEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BasePlusCommissionEmployee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CommissionEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommissionEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HourlyEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HourlyEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InvalidDataException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InvalidDataException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Invoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Payable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Payable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Payroll.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Payroll.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Payroll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Payroll.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SalariedEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SalariedEmployee.java" afterDir="false" />
     </list>
@@ -62,9 +67,9 @@
     &quot;Application.PayrollTest.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;123&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;1&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;334&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;421&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
@@ -133,13 +138,22 @@
       <option name="project" value="LOCAL" />
       <updated>1742769320780</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update generarte paystub method format teh write to file in each class add comments also added employee typoe to the printed paystub">
+      <option name="closed" value="true" />
+      <created>1742844601437</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1742844601437</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first push implement all classes and interface set up Ui Form , error handling methods and write to file method" />
     <MESSAGE value="update layout, implement validation and exception" />
     <MESSAGE value="update SSN validation included check for # of digits , update the employee type selection add utility methods for Jtextfileds and Jbottons" />
-    <option name="LAST_COMMIT_MESSAGE" value="update SSN validation included check for # of digits , update the employee type selection add utility methods for Jtextfileds and Jbottons" />
+    <MESSAGE value="update generarte paystub method format teh write to file in each class add comments also added employee typoe to the printed paystub" />
+    <option name="LAST_COMMIT_MESSAGE" value="update generarte paystub method format teh write to file in each class add comments also added employee typoe to the printed paystub" />
   </component>
 </project>

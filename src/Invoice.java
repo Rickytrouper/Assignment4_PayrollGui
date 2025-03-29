@@ -1,3 +1,8 @@
+//Abbligale Ried - ID#2301010638
+//Kwame Harriott - ID#2301011566
+//Shamoy Shea -  ID#2201011505
+//Ricardo Wright - ID#2201010833
+
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -10,6 +15,7 @@ public class Invoice implements Payable {
     private final int quantity;
     private final double pricePerItem;
 
+// initialize Constructor
     public Invoice(String contractorName, String partNumber, String partDescription, int quantity, double pricePerItem) {
         this.contractorName = contractorName;
         this.partNumber = partNumber;
@@ -18,11 +24,12 @@ public class Invoice implements Payable {
         this.pricePerItem = pricePerItem;
     }
 
+    // overwrite payble method
     @Override
     public double getPaymentAmount() {
         return quantity * pricePerItem; // Total amount due for the invoice
     }
-
+    // overwrite write to file method
     @Override
     public void writeToFile(BufferedWriter writer) throws IOException {
         writer.write("Contractor: " + contractorName);
